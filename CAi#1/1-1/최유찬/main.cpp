@@ -64,6 +64,7 @@ public:
             num--;
             T ret = temp->getVal();
             delete temp;
+
             return ret;
         }
         else{
@@ -101,6 +102,8 @@ public:
         Node<T> *temp = getNode(i);
         temp->prev->next = temp->next;
         temp->next->prev = temp->prev;
+        delete temp;
+        num--;
     }
 
     int size()
